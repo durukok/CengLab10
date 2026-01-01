@@ -79,7 +79,28 @@ public class IntHashTable {
         }
         return sum/count;
     }
-
+    //Bonus Homework
+    public boolean remove (int id){
+        int index=hash(id);
+        Node current=table[index];
+        Node previous=null;
+        if(current==null){
+            return false;
+        }
+        if(current.id==id){
+            table[index]=current.next;
+            return true;
+        }
+        while(current.next!=null&&current.id!=id){
+            previous=current;
+            current=current.next;
+        }
+        if(current!=null){
+            previous.next=current.next;
+            return true;
+        }
+        return false;
+    }
 
 
 
