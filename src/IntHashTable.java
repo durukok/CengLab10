@@ -35,6 +35,52 @@ public class IntHashTable {
         newNode.next=oldHead;
         table[index]=newNode;
     }
+    public String get(int id){
+        int index=hash(id);
+        Node current=table[index];
+        while(current!=null){
+            if(current.id==id){
+                return "Id="+current.id+"Name="+current.name+"Grade="+current.grade;
+            }
+            current=current.next;
+        }
+        return null;
+    }
+    public void printTable(){
+        System.out.print("-Hash Table Nodes-");
+        for(int i=0;i<table.length;i++){
+            System.out.print("Table nodes:"+i+":");
+
+            Node current=table[i];
+            if(current==null){
+                System.out.print("empty");
+            }else{
+                while(current.next!=null){
+                    System.out.print("Id: "+current.id+"Name:"+current.name+"Grade:"+current.grade);
+                    current=current.next;
+                }
+                System.out.println("null");
+            }
+        }
+    }
+    public double getAverageGrade(){
+        double sum=0.0;
+        int count=0;
+        for(int i=0;i<table.length;i++){
+            Node current=table[i];
+            while(current!=null){
+                sum+=current.grade;
+                count++;
+                current=current.next;
+            }
+        }
+        if(count==0){
+            return -1.0;
+        }
+        return sum/count;
+    }
+
+
 
 
 }
