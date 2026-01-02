@@ -4,7 +4,7 @@ public class IntHashTable {
         String name;
         double grade;
         Node next;
-        public Node(int id,String name,double grade) {
+        public Node(int id,String name, double grade) {
             this.id=id;
             this.name=name;
             this.grade=grade;
