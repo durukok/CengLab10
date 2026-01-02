@@ -10,25 +10,25 @@ public class HashTable {
 
         index.printTable();
 
-        int searchId = 1011;
-        String result = index.get(searchId);
-        if (result != null) {
-            System.out.println("Found student: " + result);
+        int searchId=1011;
+        String result=index.get(searchId);
+        if (result!=null) {
+            System.out.println("Found student: "+result);
         } else {
-            System.out.println("Student with ID " + searchId + " not found.");
+            System.out.println("Student with ID "+searchId+" not found.");
         }
 
-        int missingId = 9999;
-        String result2 = index.get(missingId);
-        if (result2 != null) {
-            System.out.println("Found student: " + result2);
+        int missingId=9999;
+        String result2=index.get(missingId);
+        if (result2!=null) {
+            System.out.println("Found student: "+result2);
         } else {
-            System.out.println("Student with ID " + missingId + " not found.");
+            System.out.println("Student with ID "+missingId+" not found.");
         }
 
-        double avg = index.getAverageGrade();
-        if (avg >= 0) {
-            System.out.println("Average grade in table = " + avg);
+        double avg=index.getAverageGrade();
+        if (avg>=0) {
+            System.out.println("Average grade in table = "+avg);
         } else {
             System.out.println("No students in the table, average is undefined.");
         }
